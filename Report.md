@@ -44,6 +44,6 @@ Environment solved in 274 episodes!	Average Score: 13.09
 
 ## Ideas for future work
 
-1. Extensive hyperparameter optimization
+1. A more systematic way of searching of optimal values for hyperparameters, e.g. grid search, random search, bayesian optimization or genetic algorithm
 2. Prioritized Experience Replay
 3. Dueling Deep Q Networks
