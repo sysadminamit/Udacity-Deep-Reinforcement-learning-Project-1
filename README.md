@@ -1,5 +1,5 @@
-# Udacity-Deep-Reinforcement-learning-Proje
-						![banana](Image/banana.gif)
+# Udacity-Deep-Reinforcement-learning-Project
+![banana](Image/banana.gif)
 ## Project details
 
 As a part of **Udacity Deep Reinforcement Learning Nanodegree** course, this is the first project. In this project, an agent has to navigate and collect bananas in a large, square world. This is an assignment to understand and implement the *Deep Q-Learning method* to solve this problem.
