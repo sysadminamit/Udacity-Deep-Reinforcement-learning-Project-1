@@ -1,5 +1,13 @@
 # Project report
 
+
+## Goal
+
+
+A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The goal of our agent is to collect as many yellow bananas as possible while avoiding blue bananas. In order to solve the environment, our agent must achieve an average score of +13 over 100 consecutive episodes.
+
+
+
 ## Deep Q-Learning algorithm implementation details
 
 The RL algorithm used is Deep Q Learning with *Fixed Q-targets* and *random experience replay* as described in [original paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf).
@@ -31,7 +39,7 @@ RL training parameters:
 ## Results
 
 ### Training Plot
-Plot showing the RL training with respect to average rewards over last 100 episodes. 
+The agent was able to solve the environment by achieving score of 13 over 100 consecutive episodes after 274 episodes.
 ![Episodes vs Score Per Episode](Image/plot.jpg)
 
 ### Training Output
