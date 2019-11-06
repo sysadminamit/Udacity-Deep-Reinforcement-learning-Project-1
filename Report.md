@@ -10,6 +10,16 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 
 To solve this project, I implemented Q-learning algorithm by using Deep Q network (DQN), with a target network and an experience replay buffer. I used a target network variant called [Double DQN learning](https://arxiv.org/pdf/1509.06461.pdf). Details of each of these methods, along with hyperparameters used, are given below.
 
+### Deep Q Network (DQN)
+Although Q-learning is a very powerful algorithm, its main weakness is lack of generality. If you view Q-learning as updating numbers in a two-dimensional array (Action Space * State Space), it, in fact, resembles dynamic programming. This indicates that for states that the Q-learning agent has not seen before, it has no clue which action to take. In other words, Q-learning agent does not have the ability to estimate value for unseen states. To deal with this problem, DQN get rid of the two-dimensional array by introducing Neural Network.
+DQN leverages a Neural Network to estimate the Q-value function. The input for the network is the current, while the output is the corresponding Q-value for each of the action.
+In 2013, DeepMind applied DQN to Atari game, as illustrated in the above figure. The input is the raw image of the current game situation. It went through several layers including convolutional layer as well as fully connected layer. The output is the Q-value for each of the actions that the agent can take.
+![](Image/image.png)
+
+
+Another two techniques are also essential for training DQN:
+- 1. Experience Replay: Since training samples in typical RL setup are highly correlated, and less data-efficient, it will leads to harder convergence for the network. A way to solve the sample distribution problem is adopting experience replay. Essentially, the sample transitions are stored, which will then be randomly selected from the “transition pool” to update the knowledge.
+- 2. Separate Target Network: The target Q Network has the same structure as the one that estimates value. Every C steps, according to the above pseudo code, the target network is reset to another one. Therefore, the fluctuation becomes less severe, resulting in more stable trainings.
 ### Double DQN Learning
 The method of Double DQN learning is a special case of target networks. In a basic target network approach, the maximum Q-values of the target network are used. It has been seen that this approach can lead to overestimation of the Q-values, that is, the expected rewards for state/action combinations can be incorrectly large in magnitude. Instead, I implement the Double DQN approach.
 
